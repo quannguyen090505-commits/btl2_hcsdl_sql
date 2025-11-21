@@ -35,6 +35,7 @@ CREATE TABLE `chinhanh` (
 
 LOCK TABLES `chinhanh` WRITE;
 /*!40000 ALTER TABLE `chinhanh` DISABLE KEYS */;
+INSERT INTO `chinhanh` VALUES ('001','Ho Chi Minh'),('002','Ho CHi Minh'),('003','Ha Noi'),('004','Da Nang');
 /*!40000 ALTER TABLE `chinhanh` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -112,6 +113,7 @@ CREATE TABLE `diachi` (
 
 LOCK TABLES `diachi` WRITE;
 /*!40000 ALTER TABLE `diachi` DISABLE KEYS */;
+INSERT INTO `diachi` VALUES ('000','1');
 /*!40000 ALTER TABLE `diachi` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -124,12 +126,15 @@ DROP TABLE IF EXISTS `donhang`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `donhang` (
   `MaDonHang` char(3) NOT NULL,
+  `MaNguoiMua` char(3) NOT NULL,
   `NgayTaoDon` date DEFAULT NULL,
   `TrangThai` varchar(45) DEFAULT NULL,
   `PhuongThuocThanhToan` varchar(45) DEFAULT NULL,
   `MaGiamGia` char(3) DEFAULT NULL,
   PRIMARY KEY (`MaDonHang`),
   KEY `DonHang_PhieuGiamGia` (`MaGiamGia`),
+  KEY `DonHang_NguoiMua` (`MaNguoiMua`),
+  CONSTRAINT `DonHang_NguoiMua` FOREIGN KEY (`MaNguoiMua`) REFERENCES `nguoimua` (`MaNguoiMua`),
   CONSTRAINT `DonHang_PhieuGiamGia` FOREIGN KEY (`MaGiamGia`) REFERENCES `phieugiamgia` (`MaGiamGia`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -140,6 +145,7 @@ CREATE TABLE `donhang` (
 
 LOCK TABLES `donhang` WRITE;
 /*!40000 ALTER TABLE `donhang` DISABLE KEYS */;
+INSERT INTO `donhang` VALUES ('000','000','2025-11-21','Waiting for checkout','Waiting for checkout',NULL),('001','006','2025-11-21','Waiting for checkout','Waiting for checkout',NULL);
 /*!40000 ALTER TABLE `donhang` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -154,6 +160,7 @@ CREATE TABLE `donhangbaogom` (
   `MaDonHang` char(3) NOT NULL,
   `MaSach` char(3) NOT NULL,
   `SoLuong` int DEFAULT NULL,
+  `TongGia` int DEFAULT NULL,
   PRIMARY KEY (`MaDonHang`,`MaSach`),
   KEY `DonHangBaoGom_Sach` (`MaSach`),
   CONSTRAINT `DonHangBaoGom_DonHang` FOREIGN KEY (`MaDonHang`) REFERENCES `donhang` (`MaDonHang`) ON DELETE CASCADE ON UPDATE CASCADE,
@@ -167,6 +174,7 @@ CREATE TABLE `donhangbaogom` (
 
 LOCK TABLES `donhangbaogom` WRITE;
 /*!40000 ALTER TABLE `donhangbaogom` DISABLE KEYS */;
+INSERT INTO `donhangbaogom` VALUES ('000','000',5,50000),('001','001',1,75000);
 /*!40000 ALTER TABLE `donhangbaogom` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -184,6 +192,7 @@ CREATE TABLE `donvanchuyen` (
   `NgayGiao` date DEFAULT NULL,
   `NgayNhan` date DEFAULT NULL,
   `TinhTrang` varchar(45) DEFAULT NULL,
+  `TongGia` int DEFAULT NULL,
   PRIMARY KEY (`MaDonVanChuyen`),
   KEY `DonVanChuyen_DonHang` (`MaDonHang`),
   CONSTRAINT `DonVanChuyen_DonHang` FOREIGN KEY (`MaDonHang`) REFERENCES `donhang` (`MaDonHang`) ON DELETE CASCADE ON UPDATE CASCADE
@@ -275,6 +284,7 @@ CREATE TABLE `giohangbaogom` (
 
 LOCK TABLES `giohangbaogom` WRITE;
 /*!40000 ALTER TABLE `giohangbaogom` DISABLE KEYS */;
+INSERT INTO `giohangbaogom` VALUES ('000','000',5),('006','001',1);
 /*!40000 ALTER TABLE `giohangbaogom` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -335,7 +345,7 @@ CREATE TABLE `nguoidung` (
 
 LOCK TABLES `nguoidung` WRITE;
 /*!40000 ALTER TABLE `nguoidung` DISABLE KEYS */;
-INSERT INTO `nguoidung` VALUES ('000',NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `nguoidung` VALUES ('000',NULL,NULL,NULL,NULL,NULL,NULL),('001','001@','A','001','001','M','admin'),('002','002@','E','002','002','F','admin'),('003','003@','D','003','003','M','admin'),('004','004@','C','004','004','F','admin'),('005','005@','B','005','005','F','admin'),('006','006@','Nguyen Hoang Minh Quan','006','006','M','customer'),('007','007@','Duc Quan','007','007','M','customer'),('008','008@','Nguyen Chuong','008','008','M','customer'),('009','009@','Nhat Thiem','009','009','M','customer'),('010','010@','Kiet Vi','010','010','M','customer'),('011','011@','F','011','011','M','delivery'),('012','012@','G','012','012','M','delivery'),('013','013@','H','013','013','F','delivery'),('014','014@','I','014','014','M','delivery'),('015','015@','J','015','015','F','delivery');
 /*!40000 ALTER TABLE `nguoidung` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -364,6 +374,7 @@ CREATE TABLE `nguoigiaohang` (
 
 LOCK TABLES `nguoigiaohang` WRITE;
 /*!40000 ALTER TABLE `nguoigiaohang` DISABLE KEYS */;
+INSERT INTO `nguoigiaohang` VALUES ('011','011','Xe tai','011','Ho Chi Minh',7000000),('012','012','Xe may','012','Ho Chi Minh',7000000),('013','013','Xe tai','013','Ha Noi',7000000),('014','014','Xe tai','014','Da Nang',7000),('015','015','Xe tai','015','Ha Noi',7000000);
 /*!40000 ALTER TABLE `nguoigiaohang` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -389,7 +400,7 @@ CREATE TABLE `nguoimua` (
 
 LOCK TABLES `nguoimua` WRITE;
 /*!40000 ALTER TABLE `nguoimua` DISABLE KEYS */;
-INSERT INTO `nguoimua` VALUES ('000','000');
+INSERT INTO `nguoimua` VALUES ('000','000'),('006','006'),('007','007'),('008','008'),('009','009'),('010','010');
 /*!40000 ALTER TABLE `nguoimua` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -416,6 +427,7 @@ CREATE TABLE `nguoiquantri` (
 
 LOCK TABLES `nguoiquantri` WRITE;
 /*!40000 ALTER TABLE `nguoiquantri` DISABLE KEYS */;
+INSERT INTO `nguoiquantri` VALUES ('001','2-4-6',650000,'thu ngan'),('002','3-5-7',650000,'thu ngan'),('003','2-4-6-cn',570000,'kiem kho'),('004','7-cn',650000,'thu ngan'),('005','3-5-7-cn',570000,'kiem kho');
 /*!40000 ALTER TABLE `nguoiquantri` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -431,8 +443,9 @@ CREATE TABLE `phanphoi` (
   `MaChiNhanhGui` char(3) NOT NULL,
   PRIMARY KEY (`MaChiNhanhNhan`,`MaChiNhanhGui`),
   KEY `PhanPhoi_ChiNhanhGui` (`MaChiNhanhGui`),
-  CONSTRAINT `PhanPhoi_ChiNhanhGui` FOREIGN KEY (`MaChiNhanhGui`) REFERENCES `chinhanh` (`MaChiNhanh`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `PhanPhoi_ChiNhanhNhan` FOREIGN KEY (`MaChiNhanhNhan`) REFERENCES `chinhanh` (`MaChiNhanh`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `PhanPhoi_ChiNhanhGui` FOREIGN KEY (`MaChiNhanhGui`) REFERENCES `chinhanh` (`MaChiNhanh`),
+  CONSTRAINT `PhanPhoi_ChiNhanhNhan` FOREIGN KEY (`MaChiNhanhNhan`) REFERENCES `chinhanh` (`MaChiNhanh`),
+  CONSTRAINT `Nhan_Gui` CHECK ((`MaChiNhanhNhan` <> `MaChiNhanhGui`))
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -442,6 +455,7 @@ CREATE TABLE `phanphoi` (
 
 LOCK TABLES `phanphoi` WRITE;
 /*!40000 ALTER TABLE `phanphoi` DISABLE KEYS */;
+INSERT INTO `phanphoi` VALUES ('001','002'),('004','002'),('002','003');
 /*!40000 ALTER TABLE `phanphoi` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -500,7 +514,7 @@ CREATE TABLE `sach` (
 
 LOCK TABLES `sach` WRITE;
 /*!40000 ALTER TABLE `sach` DISABLE KEYS */;
-INSERT INTO `sach` VALUES ('000',NULL,NULL,NULL,NULL,NULL,NULL,NULL,10,NULL);
+INSERT INTO `sach` VALUES ('000',NULL,NULL,NULL,NULL,NULL,NULL,10000,5,NULL),('001','Giai tich 1','Tieng Viet','','Nxb.DHQG TP.HCM',NULL,2021,75000,60,NULL),('002','Giai tich 2','Tieng Viet',NULL,'Nxb.DHQG TP.HCM',NULL,2021,80000,60,NULL),('003','Dai so tuyen tinh','Tieng Viet',NULL,'Nxb.DHQG TP.HCM',NULL,2022,65000,50,NULL),('004','Co so du lieu','Tieng Viet',NULL,'Nxb.DHQG TP.HCM',NULL,2025,175000,10,NULL),('005','Discrete mathematic','Tieng Anh',NULL,'Mc  Graw Hill Education',NULL,2019,300000,5,NULL),('006','He Thong So','Tieng Viet',NULL,'Nxb.DHQG TP.HCM',NULL,2020,65000,20,NULL),('007','Cau truc du lieu va Giai thuat','tieng Viet',NULL,'Nxb.DHQG TP.HCM',NULL,2022,70000,20,NULL),('008','Lich su Dang','Tieng Viet',NULL,'Nxb.DHQG TP.HCM',NULL,2021,50000,30,NULL),('009','Chu Nghi Xa Hoi Khoa Hoc','Tieng Viet',NULL,'Nxb.DHQG TP.HCM',NULL,2021,50000,27,NULL),('010','Tu Tuong Ho Chi Minh','Tieng Viet',NULL,'Nxb.DHQG TP.HCM',NULL,2021,55000,35,NULL);
 /*!40000 ALTER TABLE `sach` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -550,6 +564,7 @@ CREATE TABLE `theloai` (
 
 LOCK TABLES `theloai` WRITE;
 /*!40000 ALTER TABLE `theloai` DISABLE KEYS */;
+INSERT INTO `theloai` VALUES ('001','Khoa hoc May tinh',NULL),('002','Chinh tri',NULL),('003','Dai cuong',NULL);
 /*!40000 ALTER TABLE `theloai` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -612,4 +627,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-11-21  1:25:14
+-- Dump completed on 2025-11-22  0:03:18
