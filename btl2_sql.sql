@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `btl2_hcsdl` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `btl2_hcsdl`;
 -- MySQL dump 10.13  Distrib 8.0.44, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: btl2_hcsdl
@@ -357,6 +359,66 @@ LOCK TABLES `duocvietboi` WRITE;
 INSERT INTO `duocvietboi` VALUES ('001','001'),('002','002'),('003','003'),('004','004'),('005','005'),('006','006'),('007','007'),('008','008'),('009','009'),('010','010');
 /*!40000 ALTER TABLE `duocvietboi` ENABLE KEYS */;
 UNLOCK TABLES;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `soluongsach_duocvietboi_insert` AFTER INSERT ON `duocvietboi` FOR EACH ROW BEGIN
+    UPDATE TacGia
+    SET SoLuongSach=SoLuongSach+1
+    WHERE MaTacGia=NEW.MaTacGia;
+END */;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `soluongsach_duocvietboi_update` AFTER UPDATE ON `duocvietboi` FOR EACH ROW BEGIN
+    UPDATE TacGia
+    SET SoLuongSach=SoLuongSach+1
+    WHERE MaTacGia=NEW.MaTacGia;
+    UPDATE TacGia
+    SET SoLuongSach=SoLuongSach-1
+    WHERE MaTacGia=OLD.MaTacGia;
+END */;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `soluongsach_duocvietboi_delete` AFTER DELETE ON `duocvietboi` FOR EACH ROW BEGIN
+    UPDATE TacGia
+    SET SoLuongSach=SoLuongSach-1
+    WHERE MaTacGia=OLD.MaTacGia;
+END */;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 
 --
 -- Table structure for table `giaodonvanchuyen`
@@ -1035,6 +1097,53 @@ begin
     end if;
     start transaction;
     insert into DuocVietBoi value(book_id,writer_id);
+    commit;
+end ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `AdjustCategory` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `AdjustCategory`(in book_id char(3), in cat_id char(3))
+begin
+    declare BookIdValidate int default 0;
+    declare CatIdValidate int default 0;
+    -- -------------------------------------------------------
+    declare exit handler for 60027 -- id sach  khong ton tai
+    begin
+    rollback;
+    signal sqlstate '45000' set message_text='book id is invalid';
+    end;
+	declare exit handler for 60028 -- id the loai  khong ton tai
+    begin
+    rollback;
+    signal sqlstate '45000' set message_text='category id is invalid';
+    end;
+   -- -------------------------------------------------------
+    select count(*) into BookIdValidate
+    from Sach
+    where MaSach=book_id;
+    if(BookIdValidate=0) then signal sqlstate '45000' set mysql_errno=60027;
+    end if;
+    select count(*) into CatIdValidate
+    from TheLoai
+    where MaTheLoai=cat_id;
+    if(CatIdValidate=0) then signal sqlstate '45000' set mysql_errno=60028;
+    end if;
+    start transaction;
+    update ThuocTheLoai 
+    set MaTheLoai=cat_id
+    where MaSach=book_id;
     commit;
 end ;;
 DELIMITER ;
@@ -1903,6 +2012,98 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `RemoveCategory` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `RemoveCategory`(in book_id char(3), in cat_id char(3))
+begin
+    declare BookIdValidate int default 0;
+    declare CatIdValidate int default 0;
+    -- -------------------------------------------------------
+    declare exit handler for 60029 -- id sach  khong ton tai
+    begin
+    rollback;
+    signal sqlstate '45000' set message_text='book id is invalid';
+    end;
+	declare exit handler for 60030 -- id the loai  khong ton tai
+    begin
+    rollback;
+    signal sqlstate '45000' set message_text='category id is invalid';
+    end;
+   -- -------------------------------------------------------
+    select count(*) into BookIdValidate
+    from Sach
+    where MaSach=book_id;
+    if(BookIdValidate=0) then signal sqlstate '45000' set mysql_errno=60029;
+    end if;
+    select count(*) into CatIdValidate
+    from TheLoai
+    where MaTheLoai=cat_id;
+    if(CatIdValidate=0) then signal sqlstate '45000' set mysql_errno=60030;
+    end if;
+    start transaction;
+    delete from ThuocTheLoai 
+    where MaSach=book_id and MaTheLoai=cat_id;
+    commit;
+end ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `RemoveWirter` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `RemoveWirter`(in book_id char(3), in writer_id char(3))
+begin
+    declare BookIdValidate int default 0;
+    declare WriterIdValidate int default 0;
+    -- -------------------------------------------------------
+    declare exit handler for 60025 -- id sach  khong ton tai
+    begin
+    rollback;
+    signal sqlstate '45000' set message_text='book id is invalid';
+    end;
+	declare exit handler for 60026 -- id tac gia  khong ton tai
+    begin
+    rollback;
+    signal sqlstate '45000' set message_text='writer id is invalid';
+    end;
+   -- -------------------------------------------------------
+    select count(*) into BookIdValidate
+    from Sach
+    where MaSach=book_id;
+    if(BookIdValidate=0) then signal sqlstate '45000' set mysql_errno=60025;
+    end if;
+    select count(*) into WriterIdValidate
+    from TacGia
+    where MaTacGia=writer_id;
+    if(WriterIdValidate=0) then signal sqlstate '45000' set mysql_errno=60026;
+    end if;
+    start transaction;
+    delete from DuocVietBoi
+    where MaSach=book_id and MaTacGia=book_id;
+    commit;
+end ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `RemovingBook` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -2127,4 +2328,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-11-23 11:27:32
+-- Dump completed on 2025-11-24 11:15:33
