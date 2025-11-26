@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `btl2_hcsdl` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `btl2_hcsdl`;
 -- MySQL dump 10.13  Distrib 8.0.44, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: btl2_hcsdl
@@ -162,7 +160,7 @@ CREATE TABLE `donhang` (
   PRIMARY KEY (`MaDonHang`),
   KEY `DonHang_PhieuGiamGia` (`MaGiamGia`),
   KEY `DonHang_NguoiMua` (`MaNguoiMua`),
-  CONSTRAINT `DonHang_NguoiMua` FOREIGN KEY (`MaNguoiMua`) REFERENCES `nguoimua` (`MaNguoiMua`),
+  CONSTRAINT `DonHang_NguoiMua` FOREIGN KEY (`MaNguoiMua`) REFERENCES `nguoimua` (`MaNguoiMua`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `DonHang_PhieuGiamGia` FOREIGN KEY (`MaGiamGia`) REFERENCES `phieugiamgia` (`MaGiamGia`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -893,9 +891,8 @@ CREATE TABLE `phanphoi` (
   `MaChiNhanhGui` char(3) NOT NULL,
   PRIMARY KEY (`MaChiNhanhNhan`,`MaChiNhanhGui`),
   KEY `PhanPhoi_ChiNhanhGui` (`MaChiNhanhGui`),
-  CONSTRAINT `PhanPhoi_ChiNhanhGui` FOREIGN KEY (`MaChiNhanhGui`) REFERENCES `chinhanh` (`MaChiNhanh`),
-  CONSTRAINT `PhanPhoi_ChiNhanhNhan` FOREIGN KEY (`MaChiNhanhNhan`) REFERENCES `chinhanh` (`MaChiNhanh`),
-  CONSTRAINT `Nhan_Gui` CHECK ((`MaChiNhanhNhan` <> `MaChiNhanhGui`))
+  CONSTRAINT `PhanPhoi_ChiNhanhGui` FOREIGN KEY (`MaChiNhanhGui`) REFERENCES `chinhanh` (`MaChiNhanh`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `PhanPhoi_ChiNhanhNhan` FOREIGN KEY (`MaChiNhanhNhan`) REFERENCES `chinhanh` (`MaChiNhanh`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1228,8 +1225,8 @@ BEGIN
         END IF;
         
         SELECT COALESCE(SUM(SoLuong), 0) INTO v_BookSales 
-        FROM donhangbaogom 
-        WHERE MaSach = v_MaSach;
+        FROM donhangbaogom dhbg JOIN donhang dh ON dhbg.MaDonHang = dh.MaDonHang
+		WHERE  dhbg.MaSach = v_MaSach AND dh.TrangThai='checked out';
         
         SET total_author_sales = total_author_sales + v_BookSales;
         
@@ -2694,7 +2691,7 @@ BEGIN
         donhang dh ON dhbg.MaDonHang = dh.MaDonHang
     WHERE 
         
-        dh.NgayTaoDon BETWEEN p_NgayBatDau AND p_NgayKetThuc
+        dh.NgayTaoDon BETWEEN p_NgayBatDau AND p_NgayKetThuc AND dh.TrangThai='checked out'
         
     GROUP BY 
         s.MaSach, s.TenSach 
@@ -2773,4 +2770,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-11-26 17:31:41
+-- Dump completed on 2025-11-27  2:48:08
