@@ -796,7 +796,7 @@ CREATE TABLE `nguoidung` (
 
 LOCK TABLES `nguoidung` WRITE;
 /*!40000 ALTER TABLE `nguoidung` DISABLE KEYS */;
-INSERT INTO `nguoidung` VALUES ('000',NULL,NULL,NULL,NULL,NULL,NULL),('001','001@','Tran Van Quang','001','001','M','admin'),('002','002@','Dao Thi Yen','002','002','F','admin'),('003','003@','Nguyen Viet Tien','003','003','M','admin'),('004','004@','Le Thi Ngoc','004','004','F','admin'),('005','005@','Nguyen Cat Tuong','005','005','F','admin'),('006','006@','Nguyen Hoang Minh Quan','006','006','M','customer'),('007','007@','Duc Quan','007','007','M','customer'),('008','008@','Nguyen Chuong','008','008','M','customer'),('009','009@','Nhat Thiem','009','009','M','customer'),('010','010@','Kiet Vi','010','010','M','customer'),('011','011@','Nguyen Ngoc Thang','011','011','M','delivery'),('012','012@','Tran Van Tai','012','012','M','delivery'),('013','013@','Dao Thi Ngo','013','013','F','delivery'),('014','014@','Huynh Van Thang','014','014','M','delivery'),('015','015@','Le Thi Ngoc','015','015','F','delivery');
+INSERT INTO `nguoidung` VALUES ('000',NULL,NULL,NULL,NULL,NULL,NULL),('001','001@','Tran Van Quang','001','001','M','admin'),('002','002@','Dao Thi Yen','002','002','F','admin'),('003','003@','Nguyen Viet Tien','003','003','M','admin'),('004','004@','Le Thi Ngoc','004','004','F','admin'),('005','005@','Nguyen Cat Tuong','005','005','F','admin'),('006','006@','Nguyen Hoang Minh Quan','006','006','M','customer'),('007','007@','Duc Quan','007','007','M','customer'),('008','008@','Nguyen Chuong','008','008','M','customer'),('009','009@','Nhat Thiem','009','009','M','customer'),('010','010@','Kiet Vi','010','010','M','customer'),('011','011@','Nguyen Ngoc Thang','011','011','M','delivery'),('012','012@','Tran Van Tai','012','012','M','delivery'),('013','013@','Dao Thi Ngo','013','013','F','delivery'),('014','014@','Huynh Van Thang','014','014','M','delivery'),('015','015@','Le Thi Ngoc','015','015','F','delivery'),('016','016@','Le Thi Dinh','016','016','F','customer '),('017','017@','Nguyen Xuan Cao','017','017','M','customer '),('018','018@','Nguyen Minh Chau','018','018','F','customer ');
 /*!40000 ALTER TABLE `nguoidung` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -851,7 +851,7 @@ CREATE TABLE `nguoimua` (
 
 LOCK TABLES `nguoimua` WRITE;
 /*!40000 ALTER TABLE `nguoimua` DISABLE KEYS */;
-INSERT INTO `nguoimua` VALUES ('000','000'),('006','006'),('007','007'),('008','008'),('009','009'),('010','010'),('011','011');
+INSERT INTO `nguoimua` VALUES ('000','000'),('006','006'),('007','007'),('008','008'),('009','009'),('010','010'),('011','011'),('016','016'),('017','017'),('018','018');
 /*!40000 ALTER TABLE `nguoimua` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1018,7 +1018,7 @@ CREATE TABLE `sach` (
 
 LOCK TABLES `sach` WRITE;
 /*!40000 ALTER TABLE `sach` DISABLE KEYS */;
-INSERT INTO `sach` VALUES ('001','Giai Tich 1','Tieng Viet','Nguyen Hung Cuong','Nxb.DHQG TP.HCM',113,2021,75000,30,'001'),('002','Giai tich 2','Tieng Viet','Le Bao Dien','Nxb.DHQG TP.HCM',250,2021,80000,36,'001'),('003','Dai so tuyen tinh','Tieng Viet','Nguyen Chi Anh','Nxb.DHQG TP.HCM',250,2022,65000,50,'002'),('004','Co so du lieu','Tieng Viet','Le Dinh tu','Nxb.DHQG TP.HCM',700,2025,175000,10,'002'),('005','Discrete mathematic','Tieng Anh',NULL,'Mc  Graw Hill Education',2500,2019,300000,5,'005'),('006','He Thong So','Tieng Viet','Nguyen cao Thang','Nxb.DHQG TP.HCM',300,2020,65000,20,'003'),('007','Cau truc du lieu va Giai thuat','tieng Viet','Nguyen Tuan Anh','Nxb.DHQG TP.HCM',600,2022,70000,20,'002'),('008','Lich su Dang','Tieng Viet','Phan Manh Tuan','Nxb.DHQG TP.HCM',1000,2021,50000,30,'002'),('009','Chu Nghi Xa Hoi Khoa Hoc','Tieng Viet','Nguyen Thi Dinh','Nxb.DHQG TP.HCM',1112,2021,50000,27,'004'),('010','Tu Tuong Ho Chi Minh','Tieng Viet','Le Trong Tien','Nxb.DHQG TP.HCM',1500,2021,55000,35,'004'),('011','Giao Duc Quoc Phong & An ni','tieng viet','nguyen tuan quang','Nxb.DHQG TP.HCM',350,2019,50000,25,'001');
+INSERT INTO `sach` VALUES ('001','Giai Tich 1','Tieng Viet','Nguyen Hung Cuong','Nxb.DHQG TP.HCM',200,2021,75000,30,'001'),('002','Giai tich 2','Tieng Viet','Le Bao Dien','Nxb.DHQG TP.HCM',250,2021,80000,36,'001'),('003','Dai so tuyen tinh','Tieng Viet','Nguyen Chi Anh','Nxb.DHQG TP.HCM',250,2022,65000,50,'002'),('004','Co so du lieu','Tieng Viet','Le Dinh tu','Nxb.DHQG TP.HCM',700,2025,175000,10,'002'),('005','Discrete mathematic','Tieng Anh',NULL,'Mc  Graw Hill Education',2500,2019,300000,5,'005'),('006','He Thong So','Tieng Viet','Nguyen cao Thang','Nxb.DHQG TP.HCM',300,2020,65000,20,'003'),('007','Cau truc du lieu va Giai thuat','tieng Viet','Nguyen Tuan Anh','Nxb.DHQG TP.HCM',600,2022,70000,20,'002'),('008','Lich su Dang','Tieng Viet','Phan Manh Tuan','Nxb Chinh Tri Quoc Gia Su That',1000,2021,50000,30,'002'),('009','Chu Nghi Xa Hoi Khoa Hoc','Tieng Viet','Nguyen Thi Dinh','Nxb Chinh Tri Quoc Gia Su That',1112,2021,50000,27,'004'),('010','Tu Tuong Ho Chi Minh','Tieng Viet','Le Trong Tien','Nxb Chinh Tri Quoc Gia Su That',1500,2021,55000,35,'004'),('011','Giao Duc Quoc Phong & An ni','Tieng Viet','Nguyen Tuan Quang','Nxb Chinh Tri Quoc Gia Su That',350,2019,50000,25,'001'),('012','Hoa Dai Cuong','Tieng Viet','Nguyen Thi Thuy','Nxb.DHQG TP.HCM',150,2022,65000,25,'002'),('013','Vat Ly 1','Tieng Viet','Tran Hai Dang','Nxb.DHQG TP.HCM',250,2022,62000,20,'002'),('014','Mathematical Logic for Computer Science','Tieng Anh','M. Ben-Ari','Department of Science Teaching',360,2012,325000,15,'005'),('015','A First Course in Mathematical Modeling','Tieng Anh','Frank R. Giordano William P. Fox','Brooks/Cole, Cengage Learning',800,2013,500000,12,'004'),('016','Tam Ly Hoc Dai Cuong','Tieng Viet','Le Thi Hong','Nxb.DHQG TP HN',400,2020,45000,34,'002'),('017','Co Nhiet Hoc Dai Cuong','Tieng Viet','Nguyen Sinh Huy','Nxb.DHQG TP HN',350,2022,45000,42,'004'),('018','Kinh Te Vi Mo','Tieng Viet','Nguyen Thu Thuy','Nxb.DHQG TP HN',300,2023,50000,51,'005'),('019','Tim Mach Hoc','Tieng Viet','Truong Son Kim','Nxb.Y Hoc',500,2024,67000,52,'005'),('020','Suc Ben Vat Lieu','Tieng Viet','Nguyen Son Hai','Nxb.DHQG TP.HCM',450,2024,60000,46,'001');
 /*!40000 ALTER TABLE `sach` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1070,7 +1070,7 @@ CREATE TABLE `theloai` (
 
 LOCK TABLES `theloai` WRITE;
 /*!40000 ALTER TABLE `theloai` DISABLE KEYS */;
-INSERT INTO `theloai` VALUES ('001','Khoa hoc May tinh','Mon co so, chuyen nganh cho KHMT'),('002','Chinh tri','Tai lieu, giao trinh cac mon chinh tri'),('003','Dai cuong','Mon hoc dai cuong'),('004','Ki Thuat May Tinh','Mon co so, chuyen nganh cho KTMT'),('005','GDQP','Tai lieu danh cho chuong trinh GDQP');
+INSERT INTO `theloai` VALUES ('001','Khoa hoc May tinh','Mon co so, chuyen nganh cho KHMT'),('002','Chinh tri','Tai lieu, giao trinh cac mon chinh tri'),('003','Dai cuong','Mon hoc dai cuong'),('004','Ki Thuat May Tinh','Mon co so, chuyen nganh cho KTMT'),('005','GDQP','Tai lieu danh cho chuong trinh GDQP'),('006','Xay Dung','Tai lieu danh cho khoa xay dung'),('007','Kinh Te','Tai Lieu cho khoa kinh te'),('008','Co Khi','Tai lieu kho co khi'),('009','Y Duoc','Tai lieu chuyen nganh y duoc'),('010','Tam Ly','Tai lieu chuyen nganh tam ly hoc');
 /*!40000 ALTER TABLE `theloai` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1097,7 +1097,7 @@ CREATE TABLE `thuoctheloai` (
 
 LOCK TABLES `thuoctheloai` WRITE;
 /*!40000 ALTER TABLE `thuoctheloai` DISABLE KEYS */;
-INSERT INTO `thuoctheloai` VALUES ('004','001'),('005','001'),('006','001'),('007','001'),('008','002'),('009','002'),('010','002'),('001','003'),('002','003'),('003','003'),('011','005');
+INSERT INTO `thuoctheloai` VALUES ('004','001'),('005','001'),('006','001'),('007','001'),('014','001'),('015','001'),('008','002'),('009','002'),('010','002'),('001','003'),('002','003'),('003','003'),('012','003'),('013','003'),('011','005'),('020','006'),('018','007'),('017','008'),('019','009'),('016','010');
 /*!40000 ALTER TABLE `thuoctheloai` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2394,4 +2394,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-11-27 21:35:46
+-- Dump completed on 2025-11-30 17:38:25
