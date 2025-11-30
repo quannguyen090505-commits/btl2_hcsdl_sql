@@ -173,7 +173,7 @@ CREATE TABLE `donhang` (
 
 LOCK TABLES `donhang` WRITE;
 /*!40000 ALTER TABLE `donhang` DISABLE KEYS */;
-INSERT INTO `donhang` VALUES ('001','006','2025-11-22','Checked out','cash',220000,'005',198000),('002','009','2025-11-23','Waiting for checkout','Waiting for checkout',100000,NULL,0),('003','010','2025-11-25','Waiting for checkout','Waiting for checkout',385000,NULL,0),('004','007','2025-11-25','checked out','cash',80000,'002',72000),('005','008','2025-11-25','checked out','banking',600000,'007',500000),('006','007','2025-11-26','Waiting for checkout','Waiting for checkout',65000,NULL,NULL),('007','006','2025-11-27','checked out','banking',105000,'008',80000),('008','008','2025-11-27','checked out','banking',475000,'008',450000),('009','016','2025-11-29','checked out','cash',67000,'003',62000),('010','018','2025-11-30','checked out','cash',50000,'010',30000);
+INSERT INTO `donhang` VALUES ('001','006','2025-11-22','Checked out','cash',220000,'005',198000),('002','009','2025-11-23','checked out','banking',100000,'001',80000),('003','010','2025-11-25','checked out','banking',385000,'004',378000),('004','007','2025-11-25','checked out','cash',80000,'002',72000),('005','008','2025-11-25','checked out','banking',600000,'007',500000),('006','007','2025-11-26','checked out','cash',65000,'006',60000),('007','006','2025-11-27','checked out','banking',105000,'008',80000),('008','008','2025-11-27','checked out','banking',475000,'008',450000),('009','016','2025-11-29','checked out','cash',67000,'003',62000),('010','018','2025-11-30','checked out','cash',50000,'010',30000);
 /*!40000 ALTER TABLE `donhang` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -423,7 +423,7 @@ CREATE TABLE `donvanchuyen` (
 
 LOCK TABLES `donvanchuyen` WRITE;
 /*!40000 ALTER TABLE `donvanchuyen` DISABLE KEYS */;
-INSERT INTO `donvanchuyen` VALUES ('000','001','10 Ly Thuong Kiet, Quan 10,HCM','2025-11-22','2025-11-23','Delivered'),('001','005','116 Quang Trung, Quan Hoan  Kiem,Ha Noi','2025-11-25','2025-11-27','Delivered'),('002','004','12 Hai Ba Trung, Quan 7,HCM','2025-11-26','2025-11-27','Delivered'),('003','007','10 Ly Thuong Kiet, Quan 10,HCM','2025-11-27','2025-11-28','Delivered'),('004','008','116 Quang Trung, Quan Hoan  Kiem,Ha Noi','2025-11-27','2025-11-29','Delivered'),('005','009','14  Nguyen Xien, Thu Duc, HCM','2025-11-29','2025-11-30','Delivered'),('006','010','23/7 Huynh Van Banh, Quan 1, HCM','2025-11-30','2025-12-01','Delivered');
+INSERT INTO `donvanchuyen` VALUES ('000','001','10 Ly Thuong Kiet, Quan 10,HCM','2025-11-22','2025-11-23','Delivered'),('001','002','234/7 Dinh Tien Hoang, Quan Dong Dam Ha Noi','2025-11-23','2025-11-26','Delivered'),('002','003','47 Mac Dinh Chi, Da Nang','2025-11-25','2025-11-27','Delivered'),('004','004','116 Quang Trung, Quan Hoan  Kiem,Ha Noi','2025-11-25','2025-11-27','Delivered'),('005','005','12 Hai Ba Trung, Quan 7,HCM','2025-11-26','2025-11-27','Delivered'),('006','006','10 Ly Thuong Kiet, Quan 10,HCM','2025-11-26','2025-11-27','Delivered'),('007','007','12 Hai Ba Trung, Quan 7,HCM','2025-11-27','2025-11-28','Delivered'),('008','008','116 Quang Trung, Quan Hoan  Kiem,Ha Noi','2025-11-27','2025-11-29','Delivered'),('009','009','14  Nguyen Xien, Thu Duc, HCM','2025-11-29','2025-11-30','Delivered'),('010','010','23/7 Huynh Van Banh, Quan 1, HCM','2025-11-30','2025-12-01','Delivered');
 /*!40000 ALTER TABLE `donvanchuyen` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -537,7 +537,7 @@ CREATE TABLE `giaodonvanchuyen` (
 
 LOCK TABLES `giaodonvanchuyen` WRITE;
 /*!40000 ALTER TABLE `giaodonvanchuyen` DISABLE KEYS */;
-INSERT INTO `giaodonvanchuyen` VALUES ('011','000'),('015','001'),('012','002'),('012','003'),('013','004');
+INSERT INTO `giaodonvanchuyen` VALUES ('011','000'),('014','001'),('015','002'),('015','004'),('012','005'),('013','006'),('012','007'),('013','008'),('011','009'),('012','010');
 /*!40000 ALTER TABLE `giaodonvanchuyen` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -565,7 +565,7 @@ CREATE TABLE `giohangbaogom` (
 
 LOCK TABLES `giohangbaogom` WRITE;
 /*!40000 ALTER TABLE `giohangbaogom` DISABLE KEYS */;
-INSERT INTO `giohangbaogom` VALUES ('006','008',1),('007','005',7),('007','009',7),('008','002',5),('009','008',2),('009','010',2),('010','007',7);
+INSERT INTO `giohangbaogom` VALUES ('006','008',1),('007','005',5),('007','009',7),('008','002',7),('009','008',2),('009','010',2),('010','007',5);
 /*!40000 ALTER TABLE `giohangbaogom` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -966,7 +966,7 @@ CREATE TABLE `phieugiamgia` (
 
 LOCK TABLES `phieugiamgia` WRITE;
 /*!40000 ALTER TABLE `phieugiamgia` DISABLE KEYS */;
-INSERT INTO `phieugiamgia` VALUES ('001','100000','2025-11-24',50),('002','50000','2025-11-30',19),('003','10000','2025-12-12',100),('004','20000','2026-01-20',5),('005','200000','2025-11-25',4),('006','100000','2025-11-24',4),('007','200000','2025-12-25',4),('008','50000','2025-11-30',19),('009','20000','2025-12-30',50),('010','30000','2026-02-24',50);
+INSERT INTO `phieugiamgia` VALUES ('001','100000','2025-11-24',50),('002','50000','2025-11-30',19),('003','10000','2025-12-12',100),('004','20000','2026-01-20',5),('005','200000','2025-11-25',4),('006','20000','2025-11-24',4),('007','200000','2025-12-25',4),('008','50000','2025-11-30',19),('009','20000','2025-12-30',50),('010','30000','2026-02-24',50);
 /*!40000 ALTER TABLE `phieugiamgia` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -1122,7 +1122,7 @@ CREATE TABLE `voucher` (
 
 LOCK TABLES `voucher` WRITE;
 /*!40000 ALTER TABLE `voucher` DISABLE KEYS */;
-INSERT INTO `voucher` VALUES ('006',50000),('007',100000),('008',25000),('009',15000),('010',20000);
+INSERT INTO `voucher` VALUES ('006',5000),('007',100000),('008',25000),('009',15000),('010',20000);
 /*!40000 ALTER TABLE `voucher` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2360,4 +2360,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-11-30 22:02:04
+-- Dump completed on 2025-11-30 23:37:00
