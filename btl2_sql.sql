@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `btl2_hcsdl` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `btl2_hcsdl`;
 -- MySQL dump 10.13  Distrib 8.0.44, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: btl2_hcsdl
@@ -90,7 +92,7 @@ CREATE TABLE `danhgia` (
 
 LOCK TABLES `danhgia` WRITE;
 /*!40000 ALTER TABLE `danhgia` DISABLE KEYS */;
-INSERT INTO `danhgia` VALUES ('006','001','noi dung sach tot','2025-11-23',5),('006','002','sach tot','2025-11-23',5),('006','003','noi dung sach hay','2025-11-23',5),('006','009','bo ich','2025-11-28',5),('006','010','bo ich','2025-11-28',5),('007','002','tot','2025-11-25',4),('008','004','hay','2025-11-28',5),('008','005','dang mua','2025-11-26',5);
+INSERT INTO `danhgia` VALUES ('006','001','noi dung sach tot','2025-11-23',5),('006','002','sach tot','2025-11-23',4),('006','003','noi dung sach hay','2025-11-23',4),('006','009','bo ich','2025-11-28',3),('006','010','bo ich','2025-11-28',5),('007','002','tot','2025-11-25',5),('008','004','hay','2025-11-28',5),('008','005','dang mua','2025-11-26',3);
 /*!40000 ALTER TABLE `danhgia` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -1016,7 +1018,7 @@ CREATE TABLE `sach` (
 
 LOCK TABLES `sach` WRITE;
 /*!40000 ALTER TABLE `sach` DISABLE KEYS */;
-INSERT INTO `sach` VALUES ('001','Giai tich 1','Tieng Viet','Nguyen Hung Cuong','Nxb.DHQG TP.HCM',113,2021,75000,30,'001'),('002','Giai tich 2','Tieng Viet','A','Nxb.DHQG TP.HCM',250,2021,80000,36,'001'),('003','Dai so tuyen tinh','Tieng Viet','Nguyen Chi Anh','Nxb.DHQG TP.HCM',250,2022,65000,50,'002'),('004','Co so du lieu','Tieng Viet','Le Dinh tu','Nxb.DHQG TP.HCM',700,2025,175000,10,'002'),('005','Discrete mathematic','Tieng Anh',NULL,'Mc  Graw Hill Education',2500,2019,300000,5,'005'),('006','He Thong So','Tieng Viet','Nguyen cao Thang','Nxb.DHQG TP.HCM',300,2020,65000,20,'003'),('007','Cau truc du lieu va Giai thuat','tieng Viet','Nguyen Tuan Anh','Nxb.DHQG TP.HCM',600,2022,70000,20,'002'),('008','Lich su Dang','Tieng Viet','Phan Manh Tuan','Nxb.DHQG TP.HCM',1000,2021,50000,30,'002'),('009','Chu Nghi Xa Hoi Khoa Hoc','Tieng Viet','Nguyen Thi Dinh','Nxb.DHQG TP.HCM',1112,2021,50000,27,'004'),('010','Tu Tuong Ho Chi Minh','Tieng Viet','Le Trong Tien','Nxb.DHQG TP.HCM',1500,2021,55000,35,'004'),('011','Giao Duc Quoc Phong & An ni','tieng viet','nguyen tuan quang','Nxb.DHQG TP.HCM',350,2019,50000,25,'001');
+INSERT INTO `sach` VALUES ('001','Giai Tich 1','Tieng Viet','Nguyen Hung Cuong','Nxb.DHQG TP.HCM',113,2021,75000,30,'001'),('002','Giai tich 2','Tieng Viet','Le Bao Dien','Nxb.DHQG TP.HCM',250,2021,80000,36,'001'),('003','Dai so tuyen tinh','Tieng Viet','Nguyen Chi Anh','Nxb.DHQG TP.HCM',250,2022,65000,50,'002'),('004','Co so du lieu','Tieng Viet','Le Dinh tu','Nxb.DHQG TP.HCM',700,2025,175000,10,'002'),('005','Discrete mathematic','Tieng Anh',NULL,'Mc  Graw Hill Education',2500,2019,300000,5,'005'),('006','He Thong So','Tieng Viet','Nguyen cao Thang','Nxb.DHQG TP.HCM',300,2020,65000,20,'003'),('007','Cau truc du lieu va Giai thuat','tieng Viet','Nguyen Tuan Anh','Nxb.DHQG TP.HCM',600,2022,70000,20,'002'),('008','Lich su Dang','Tieng Viet','Phan Manh Tuan','Nxb.DHQG TP.HCM',1000,2021,50000,30,'002'),('009','Chu Nghi Xa Hoi Khoa Hoc','Tieng Viet','Nguyen Thi Dinh','Nxb.DHQG TP.HCM',1112,2021,50000,27,'004'),('010','Tu Tuong Ho Chi Minh','Tieng Viet','Le Trong Tien','Nxb.DHQG TP.HCM',1500,2021,55000,35,'004'),('011','Giao Duc Quoc Phong & An ni','tieng viet','nguyen tuan quang','Nxb.DHQG TP.HCM',350,2019,50000,25,'001');
 /*!40000 ALTER TABLE `sach` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1240,87 +1242,6 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
-/*!50003 DROP PROCEDURE IF EXISTS `AddingBook` */;
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb4 */ ;
-/*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `AddingBook`(
-in ma_sach char(3),
-in ten_sach varchar(45),
-in ngon_ngu varchar(45),
-in dich_gia varchar(45),
-in ten_nha_xuat_ban varchar(45),
-in so_trang int,
-in nam year,
-in gia int,
-in so_luong int,
-in ma_chi_nhanh char(3)
-)
-begin
-    declare bookIdValidate int default 0;
-    declare AgencyValidate int default 0;
-    declare BookValidate int default 0;
-    -- -------------------------------------------------------
-	declare exit handler for 60001 -- so luong san pham <0
-    begin
-    rollback;
-    signal sqlstate '45000' set message_text='the selected amount is invalid';
-    end;
-    declare exit handler for 60002 -- gia cua san pham <0
-    begin
-    rollback;
-    signal sqlstate '45000' set message_text='the price of  product is invalid';
-    end;
-    declare exit handler for 60003 -- trung ma san pham
-    begin
-    rollback;
-    signal sqlstate '45000' set message_text='the id of product has already exitsted';
-    end;
-     declare exit handler for 60004 -- ma chi nhanh khong ton tai
-    begin
-    rollback;
-    signal sqlstate '45000' set message_text='the id of agency is invalid';
-    end;    
-    declare exit handler for 60005 -- san pham da ton tai/ sach co chung ten va chung tac gia
-    begin
-    rollback;
-    signal sqlstate '45000' set message_text='the product has already exitsted';
-    end;
-	-- -------------------------------------------------------
-    if(so_luong<0) then signal sqlstate '45000' set mysql_errno=60001;
-    end if;
-	if(gia<0) then signal sqlstate '45000' set mysql_errno=60002;
-    end if;
-    select count(*) into BookIdValidate
-    from Sach
-    where MaSach=ma_sach;
-    if(BookIdValidate!=0) then signal sqlstate '45000' set mysql_errno=60003;
-    end if;
-    select count(*) into AgencyValidate
-    from ChiNhanh
-    where MaChiNhanh=ma_chi_nhanh;
-    if(AgencyValidate=0) then signal sqlstate '45000' set mysql_errno=60004;
-    end if;
-    select count(*) into BookValidate
-    from (Sach natural join DuocVietBoi) natural join TacGia
-    where TenSach=ten_sach and TenTacGia=ten_tac_gia;
-    if(BookValidate!=0)then signal sqlstate '45000' set mysql_errno=60005;
-    end if;
-	start transaction;
-    insert into Sach values (ma_sach,ten_sach,Ngon_ngu,dich_gia,ten_nha_xuat_ban,so_trang,nam,so_luong, ma_chi_nhanh);
-    commit;
-end ;;
-DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `AddingBookFromCartIntoOrder` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -1505,11 +1426,6 @@ begin
     rollback;
     signal sqlstate '45000' set message_text='the id of agency is invalid';
     end;    
-    declare exit handler for 60005 -- san pham da ton tai/ sach co chung ten va chung tac gia
-    begin
-    rollback;
-    signal sqlstate '45000' set message_text='the product has already exitsted';
-    end;
 	-- -------------------------------------------------------
     if(so_luong<0) then signal sqlstate '45000' set mysql_errno=60001;
     end if;
@@ -1579,7 +1495,7 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
-/*!50003 DROP PROCEDURE IF EXISTS `AdjustingBookAgency` */;
+/*!50003 DROP PROCEDURE IF EXISTS `AdjustingBookOnShelf` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
@@ -1589,340 +1505,82 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `AdjustingBookAgency`(in book_id char(3), in agency_id char(3))
+CREATE DEFINER=`root`@`localhost` PROCEDURE `AdjustingBookOnShelf`(
+in ma_sach char(3),
+in ten_sach varchar(45),
+in ngon_ngu varchar(45),
+in dich_gia varchar(45),
+in ten_nha_xuat_ban varchar(45),
+in so_trang int,
+in nam year,
+in new_gia int,
+in so_luong int,
+in ma_chi_nhanh char(3)
+)
 begin
-    declare BookIdValidate int default 0;
-    declare AgencyIdValidate int default 0;
-   -- -------------------------------------------------------
-    declare exit handler for 60021 -- ma id sach ko ton tai
-    begin
-    rollback;
-    signal sqlstate '45000' set message_text='book id is invalid';
-    end;
-	declare exit handler for 60022 -- ma id chi nhanh ko ton tai
-    begin
-    rollback;
-    signal sqlstate '45000' set message_text='agency id is invalid';
-    end;
+    declare bookIdValidate int default 0;
+    declare AgencyValidate int default 0;
     -- -------------------------------------------------------
-	select count(*) into BookIdValidate
-    from Sach
-    where MaSach=book_id;
-    if(BookIdValidate=0) then signal sqlstate '45000' set mysql_errno=60021;
-    end if;
-	select count(*) into AgencyIdValidate
-    from ChiNhanh
-    where MaChiNhanh=agency_id;
-    if(AgencyIdValidate=0) then signal sqlstate '45000' set mysql_errno=60022;
-    end if;
-    start transaction;
-    update Sach set MaChiNhanh=agency_id where MaSach=book_id;
-    commit;
-end ;;
-DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
-/*!50003 DROP PROCEDURE IF EXISTS `AdjustingBookLanguage` */;
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb4 */ ;
-/*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `AdjustingBookLanguage`(in book_id char(3), in ngon_ngu varchar(45))
-begin
-    declare BookIdValidate int default 0;
-   -- -------------------------------------------------------
-    declare exit handler for 60016 -- ma id sach ko ton tai
+    declare exit handler for 60006 -- ma sach khong ton tai
     begin
     rollback;
-    signal sqlstate '45000' set message_text='book id is invalid';
+    signal sqlstate '45000' set message_text='the id of product is invalid';
     end;
-    -- -------------------------------------------------------
-	select count(*) into BookIdValidate
-    from Sach
-    where MaSach=book_id;
-    if(BookIdValidate=0) then signal sqlstate '45000' set mysql_errno=60016;
-    end if;
-    start transaction;
-    update Sach set NgonNgu=ngon_ngu where MaSach=book_id;
-    commit;
-end ;;
-DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
-/*!50003 DROP PROCEDURE IF EXISTS `AdjustingBookName` */;
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb4 */ ;
-/*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `AdjustingBookName`(in book_id char(3), in book_name varchar(45))
-begin
-    declare BookIdValidate int default 0;
-   -- -------------------------------------------------------
-    declare exit handler for 60015 -- ma id sach ko ton tai
-    begin
-    rollback;
-    signal sqlstate '45000' set message_text='book id is invalid';
-    end;
-    -- -------------------------------------------------------
-	select count(*) into BookIdValidate
-    from Sach
-    where MaSach=book_id;
-    if(BookIdValidate=0) then signal sqlstate '45000' set mysql_errno=60015;
-    end if;
-    start transaction;
-    update Sach set TenSach=book_name where MaSach=book_id;
-    commit;
-end ;;
-DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
-/*!50003 DROP PROCEDURE IF EXISTS `AdjustingBookNumber` */;
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb4 */ ;
-/*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `AdjustingBookNumber`(in book_id char(3), in new_amount int)
-begin
-    declare BookIdValidate int default 0;
-   -- -------------------------------------------------------
-	declare exit handler for 60006 -- so luong lua chon<0
+	declare exit handler for 60007 -- so luong san pham <0
     begin
     rollback;
     signal sqlstate '45000' set message_text='the selected amount is invalid';
-    end;  
-    declare exit handler for 60007 -- ma id sach ko ton tai
-    begin
-    rollback;
-    signal sqlstate '45000' set message_text='book id is invalid';
     end;
-    -- -------------------------------------------------------
-    if(new_amount<0) then signal sqlstate '45000' set mysql_errno=60006;
-    end if;
-	select count(*) into BookIdValidate
-    from Sach
-    where MaSach=book_id;
-    if(BookIdValidate=0) then signal sqlstate '45000' set mysql_errno=60007;
-    end if;
-    start transaction;
-    update Sach set SoLuongTonKho=new_amount where MaSach=book_id;
-    commit;
-end ;;
-DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
-/*!50003 DROP PROCEDURE IF EXISTS `AdjustingBookPages` */;
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb4 */ ;
-/*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `AdjustingBookPages`(in book_id char(3), in pages int)
-begin
-    declare BookIdValidate int default 0;
-   -- -------------------------------------------------------
-    declare exit handler for 60019 -- ma id sach ko ton tai
+    declare exit handler for 60008 -- gia cua san pham <0
     begin
     rollback;
-    signal sqlstate '45000' set message_text='book id is invalid';
+    signal sqlstate '45000' set message_text='the price of  product is invalid';
     end;
-    -- -------------------------------------------------------
-	select count(*) into BookIdValidate
-    from Sach
-    where MaSach=book_id;
-    if(BookIdValidate=0) then signal sqlstate '45000' set mysql_errno=60019;
-    end if;
-    start transaction;
-    update Sach set SoTrang=pages where MaSach=book_id;
-    commit;
-end ;;
-DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
-/*!50003 DROP PROCEDURE IF EXISTS `AdjustingBookPrice` */;
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb4 */ ;
-/*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `AdjustingBookPrice`(in book_id char(3), in new_price int)
-begin
-    declare BookIdValidate int default 0;
-   -- -------------------------------------------------------
-	declare exit handler for 60013 -- gia lua chon<0
+	declare exit handler for 60009 -- so trang cua san pham <0
     begin
     rollback;
-    signal sqlstate '45000' set message_text='the selected price is invalid';
-    end;  
-    declare exit handler for 60014 -- ma id sach ko ton tai
-    begin
-    rollback;
-    signal sqlstate '45000' set message_text='book id is invalid';
+    signal sqlstate '45000' set message_text='the number of pages of product is invalid';
     end;
-    -- -------------------------------------------------------
-    if(new_price<0) then signal sqlstate '45000' set mysql_errno=60013;
-    end if;
-	select count(*) into BookIdValidate
-    from Sach
-    where MaSach=book_id;
-    if(BookIdValidate=0) then signal sqlstate '45000' set mysql_errno=60014;
-    end if;
-    start transaction;
-    update Sach set Gia=new_price where MaSach=book_id;
-    commit;
-end ;;
-DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
-/*!50003 DROP PROCEDURE IF EXISTS `AdjustingBookPriceOnShelf` */;
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb4 */ ;
-/*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `AdjustingBookPriceOnShelf`(in book_id char(3), in new_price int)
-begin
-    declare BookIdValidate int default 0;
-   -- -------------------------------------------------------
-	declare exit handler for 60013 -- gia lua chon<0
+     declare exit handler for 60010 -- ma chi nhanh khong ton tai
     begin
     rollback;
-    signal sqlstate '45000' set message_text='the selected price is invalid';
-    end;  
-    declare exit handler for 60014 -- ma id sach ko ton tai
-    begin
-    rollback;
-    signal sqlstate '45000' set message_text='book id is invalid';
-    end;
-    -- -------------------------------------------------------
-    if(new_price<0) then signal sqlstate '45000' set mysql_errno=60013;
-    end if;
-	select count(*) into BookIdValidate
-    from Sach
-    where MaSach=book_id;
-    if(BookIdValidate=0) then signal sqlstate '45000' set mysql_errno=60014;
-    end if;
-    start transaction;
-    update Sach set Gia=new_price where MaSach=book_id;
-    commit;
-end ;;
-DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
-/*!50003 DROP PROCEDURE IF EXISTS `AdjustingBookPublisher` */;
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb4 */ ;
-/*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `AdjustingBookPublisher`(in book_id char(3), in nxb varchar(45))
-begin
-    declare BookIdValidate int default 0;
-   -- -------------------------------------------------------
-    declare exit handler for 60018 -- ma id sach ko ton tai
-    begin
-    rollback;
-    signal sqlstate '45000' set message_text='book id is invalid';
-    end;
-    -- -------------------------------------------------------
-	select count(*) into BookIdValidate
-    from Sach
-    where MaSach=book_id;
-    if(BookIdValidate=0) then signal sqlstate '45000' set mysql_errno=60018;
-    end if;
-    start transaction;
-    update Sach set NhaXuatBan=nxb where MaSach=book_id;
-    commit;
-end ;;
-DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
-/*!50003 DROP PROCEDURE IF EXISTS `AdjustingBookToCategory` */;
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb4 */ ;
-/*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `AdjustingBookToCategory`(in book_id char(3), in cat_id char(3))
-begin
-    declare BookIdValidate int default 0;
-    declare CatIdValidate int default 0;
-    -- -------------------------------------------------------
-    declare exit handler for 60027 -- id sach  khong ton tai
-    begin
-    rollback;
-    signal sqlstate '45000' set message_text='book id is invalid';
-    end;
-	declare exit handler for 60028 -- id the loai  khong ton tai
-    begin
-    rollback;
-    signal sqlstate '45000' set message_text='category id is invalid';
-    end;
-   -- -------------------------------------------------------
+    signal sqlstate '45000' set message_text='the id of agency is invalid';
+    end;    
+	-- -------------------------------------------------------
     select count(*) into BookIdValidate
     from Sach
-    where MaSach=book_id;
-    if(BookIdValidate=0) then signal sqlstate '45000' set mysql_errno=60027;
+    where MaSach=ma_sach;
+    if(BookIdValidate=0) then signal sqlstate '45000' set mysql_errno=60006;
     end if;
-    select count(*) into CatIdValidate
-    from TheLoai
-    where MaTheLoai=cat_id;
-    if(CatIdValidate=0) then signal sqlstate '45000' set mysql_errno=60028;
+    if(so_luong is not NULL and so_luong<0) then signal sqlstate '45000' set mysql_errno=60007;
     end if;
-    start transaction;
-    update ThuocTheLoai 
-    set MaTheLoai=cat_id
-    where MaSach=book_id;
+	if(new_gia is not null and new_gia<0) then signal sqlstate '45000' set mysql_errno=60008;
+    end if;
+    if(so_trang is not null and so_trang<0) then signal sqlstate '45000' set mysql_errno=60009;
+    end if;
+    if(ma_chi_nhanh is not null and ma_chi_nhanh !='') then
+    begin
+		select count(*) into AgencyValidate
+		from ChiNhanh
+		where MaChiNhanh=ma_chi_nhanh;
+		if(AgencyValidate=0) then signal sqlstate '45000' set mysql_errno=60010;
+		end if;
+    end;
+    end if;
+	start transaction;
+    UPDATE Sach
+    SET 
+        TenSach = COALESCE(ten_sach, TenSach),
+        NgonNgu = COALESCE(ngon_ngu, NgonNgu),
+        DichGia = COALESCE(dich_gia, DichGia),
+        TenNhaXuatBan = COALESCE(ten_nha_xuat_ban, TenNhaXuatBan),
+        SoTrang = COALESCE(so_trang, SoTrang),
+        NamXuatBan = COALESCE(nam, NamXuatBan),
+        
+        SoluongTonKho=COALESCE(so_luong,SoLUongTonKho),
+        MaChiNhanh=COALESCE(ma_chi_nhanh,MaChiNhanh),
+        Gia = COALESCE(new_gia, Gia)
+    WHERE MaSach = ma_sach;
     commit;
 end ;;
 DELIMITER ;
@@ -2004,40 +1662,6 @@ begin
     end if;
     start transaction;
     update Sach set DichGia=dich_gia where MaSach=book_id;
-    commit;
-end ;;
-DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
-/*!50003 DROP PROCEDURE IF EXISTS `AdjustingBookYear` */;
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb4 */ ;
-/*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `AdjustingBookYear`(in book_id char(3), in nam year)
-begin
-    declare BookIdValidate int default 0;
-   -- -------------------------------------------------------
-    declare exit handler for 60020 -- ma id sach ko ton tai
-    begin
-    rollback;
-    signal sqlstate '45000' set message_text='book id is invalid';
-    end;
-    -- -------------------------------------------------------
-	select count(*) into BookIdValidate
-    from Sach
-    where MaSach=book_id;
-    if(BookIdValidate=0) then signal sqlstate '45000' set mysql_errno=60020;
-    end if;
-    start transaction;
-    update Sach set NamXuatBan=nam where MaSach=book_id;
     commit;
 end ;;
 DELIMITER ;
@@ -2770,4 +2394,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-11-27  2:48:08
+-- Dump completed on 2025-11-27 21:35:46
