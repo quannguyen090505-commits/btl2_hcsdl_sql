@@ -565,7 +565,7 @@ CREATE TABLE `giohangbaogom` (
 
 LOCK TABLES `giohangbaogom` WRITE;
 /*!40000 ALTER TABLE `giohangbaogom` DISABLE KEYS */;
-INSERT INTO `giohangbaogom` VALUES ('006','008',NULL),('007','005',NULL),('007','009',NULL),('008','002',NULL),('009','008',NULL),('009','010',NULL),('010','007',NULL);
+INSERT INTO `giohangbaogom` VALUES ('006','008',1),('007','005',7),('007','009',7),('008','002',5),('009','008',2),('009','010',2),('010','007',7);
 /*!40000 ALTER TABLE `giohangbaogom` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
