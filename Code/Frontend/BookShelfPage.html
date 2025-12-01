@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thư Viện Sách </title>
+    <link rel="stylesheet" href="BookShelfStyle.css"> 
+</head>
+<body>
+
+    <div class="container guest-view">
+        <h2>Danh Sách Tác Phẩm Sách</h2>
+        
+        <div class="action-bar">
+            <button class="action-button btn-search" id="btn-show-search">🔍 Tìm Kiếm & Lọc</button>
+        </div>
+
+        <table id="book-results-table">
+            <thead>
+                <tr>
+                    <th>Ảnh Bìa</th>
+                    <th>Tên Sách</th>
+                    <th>Ngôn Ngữ</th>
+                    <th>Số Trang</th>
+                    <th>Giá Bán</th>
+                    <th>Tồn Kho</th>
+                    <th>Nhà Xuất Bản</th>
+                    <th>Năm XB</th>
+                    <th>Dịch Giả</th>
+                </tr>
+            </thead>
+            <tbody id="book-table-body">
+                </tbody>
+        </table>
+    </div>
+    
+    <div id="search-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn search-close-btn">&times;</span>
+            <h1>Form Tìm Kiếm Sách</h1>
+            
+            <form id="search-form">
+                <div class="form-group"><label for="keyword">Từ khóa trong tên sách:</label><input type="text" id="keyword" name="keyword" placeholder="Nhập tên sách..."></div>
+                <div class="price-group">
+                    <div class="form-group price-field"><label for="min-price">Giá tối thiểu (VNĐ):</label><input type="number" id="min-price" name="min-price" min="0" placeholder="0"><div class="error-message" id="min-price-error"></div></div>
+                    <div class="form-group price-field"><label for="max-price">Giá tối đa (VNĐ):</label><input type="number" id="max-price" name="max-price" min="0" placeholder="1000000"><div class="error-message" id="max-price-error"></div></div>
+                </div>
+                <div class="form-group">
+                    <label for="category">Thể loại:</label>
+                    <select id="category" name="category">
+                        <option value="" selected>Tất cả thể loại</option>
+                        <option value="general subject">Đại Cương</option>
+                        <option value="Computer science major">Chuyên ngành KHMT</option>
+                        <option value="Computer engineering major">Chuyên ngành KTMT</option>
+                        <option value="politcis">Chinh Tri</option>
+                    </select>
+                    <div class="error-message" id="category-error"></div>
+                </div>
+                <div class="form-group">
+                    <label for="sort-order">Thứ tự sắp xếp:</label>
+                    <select id="sort-order" name="sort-order">
+                        <option value="relevance">Mức độ liên quan</option>
+                        <option value="price-asc">Giá tăng dần</option>
+                        <option value="price-desc">Giá giảm dần</option>
+                        <option value="title-asc">Tên A-Z</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="search-button">Tìm Kiếm</button>
+                <div class="form-message" id="form-message"></div>
+            </form>
+        </div>
+    </div>
+    
+    <div id="crud-modal" class="modal" style="display:none;"></div> 
+
+    <script src="BookShelfScript.js"></script>
+</body>
+</html>

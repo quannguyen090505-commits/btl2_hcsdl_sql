@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `btl2_hcsdl` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `btl2_hcsdl`;
 -- MySQL dump 10.13  Distrib 8.0.44, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: btl2_hcsdl
@@ -154,8 +152,8 @@ CREATE TABLE `donhang` (
   `MaDonHang` char(3) NOT NULL,
   `MaNguoiMua` char(3) NOT NULL,
   `NgayTaoDon` date DEFAULT NULL,
-  `TrangThai` varchar(45) DEFAULT NULL,
-  `PhuongThucThanhToan` varchar(45) DEFAULT NULL,
+  `TrangThai` varchar(255) DEFAULT NULL,
+  `PhuongThucThanhToan` varchar(255) DEFAULT NULL,
   `TongGia` int DEFAULT NULL,
   `MaGiamGia` char(3) DEFAULT NULL,
   `GiaCuoiCung` int DEFAULT NULL,
@@ -565,7 +563,7 @@ CREATE TABLE `giohangbaogom` (
 
 LOCK TABLES `giohangbaogom` WRITE;
 /*!40000 ALTER TABLE `giohangbaogom` DISABLE KEYS */;
-INSERT INTO `giohangbaogom` VALUES ('006','008',1),('007','005',5),('007','009',7),('008','002',7),('009','008',2),('009','010',2),('010','007',5);
+INSERT INTO `giohangbaogom` VALUES ('006','008',NULL),('007','005',NULL),('007','009',NULL),('008','002',NULL),('009','008',NULL),('009','010',NULL),('010','007',NULL);
 /*!40000 ALTER TABLE `giohangbaogom` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -997,12 +995,12 @@ DROP TABLE IF EXISTS `sach`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `sach` (
   `MaSach` char(3) NOT NULL,
-  `TenSach` varchar(45) DEFAULT NULL,
-  `NgonNgu` varchar(45) DEFAULT NULL,
-  `DichGia` varchar(45) DEFAULT NULL,
-  `TenNhaXuatBan` varchar(45) DEFAULT NULL,
+  `TenSach` varchar(255) DEFAULT NULL,
+  `NgonNgu` varchar(255) DEFAULT NULL,
+  `DichGia` varchar(255) DEFAULT NULL,
+  `TenNhaXuatBan` varchar(255) DEFAULT NULL,
   `SoTrang` int DEFAULT NULL,
-  `NamXuatBan` year DEFAULT NULL,
+  `NamXuatBan` int DEFAULT NULL,
   `Gia` int DEFAULT NULL,
   `SoLuongTonKho` int DEFAULT NULL,
   `MaChiNhanh` varchar(45) DEFAULT NULL,
@@ -1018,7 +1016,7 @@ CREATE TABLE `sach` (
 
 LOCK TABLES `sach` WRITE;
 /*!40000 ALTER TABLE `sach` DISABLE KEYS */;
-INSERT INTO `sach` VALUES ('001','Giai Tich 1','Tieng Viet','Nguyen Hung Cuong','Nxb.DHQG TP.HCM',200,2021,75000,30,'001'),('002','Giai tich 2','Tieng Viet','Le Bao Dien','Nxb.DHQG TP.HCM',250,2021,80000,36,'001'),('003','Dai so tuyen tinh','Tieng Viet','Nguyen Chi Anh','Nxb.DHQG TP.HCM',250,2022,65000,50,'002'),('004','Co so du lieu','Tieng Viet','Le Dinh tu','Nxb.DHQG TP.HCM',700,2025,175000,10,'002'),('005','Discrete mathematic','Tieng Anh','Kenneth H. Rosen','Mc  Graw Hill Education',2500,2019,300000,5,'005'),('006','He Thong So','Tieng Viet','Nguyen cao Thang','Nxb.DHQG TP.HCM',300,2020,65000,20,'003'),('007','Cau truc du lieu va Giai thuat','tieng Viet','Nguyen Tuan Anh','Nxb.DHQG TP.HCM',600,2022,70000,20,'002'),('008','Lich su Dang','Tieng Viet','Phan Manh Tuan','Nxb Chinh Tri Quoc Gia Su That',1000,2021,50000,30,'002'),('009','Chu Nghi Xa Hoi Khoa Hoc','Tieng Viet','Nguyen Thi Dinh','Nxb Chinh Tri Quoc Gia Su That',1112,2021,50000,27,'004'),('010','Tu Tuong Ho Chi Minh','Tieng Viet','Le Trong Tien','Nxb Chinh Tri Quoc Gia Su That',1500,2021,55000,35,'004'),('011','Giao Duc Quoc Phong & An ni','Tieng Viet','Nguyen Tuan Quang','Nxb Chinh Tri Quoc Gia Su That',350,2019,50000,25,'001'),('012','Hoa Dai Cuong','Tieng Viet','Nguyen Thi Thuy','Nxb.DHQG TP.HCM',150,2022,65000,25,'002'),('013','Vat Ly 1','Tieng Viet','Tran Hai Dang','Nxb.DHQG TP.HCM',250,2022,62000,20,'002'),('014','Mathematical Logic for Computer Science','Tieng Anh','M. Ben-Ari','Department of Science Teaching',360,2012,325000,15,'005'),('015','A First Course in Mathematical Modeling','Tieng Anh','Frank R. Giordano William P. Fox','Brooks/Cole, Cengage Learning',800,2013,500000,12,'004'),('016','Tam Ly Hoc Dai Cuong','Tieng Viet','Le Thi Hong','Nxb.DHQG TP HN',400,2020,45000,34,'002'),('017','Co Nhiet Hoc Dai Cuong','Tieng Viet','Nguyen Sinh Huy','Nxb.DHQG TP HN',350,2022,45000,42,'004'),('018','Kinh Te Vi Mo','Tieng Viet','Nguyen Thu Thuy','Nxb.DHQG TP HN',300,2023,50000,51,'005'),('019','Tim Mach Hoc','Tieng Viet','Truong Son Kim','Nxb.Y Hoc',500,2024,67000,52,'005'),('020','Suc Ben Vat Lieu','Tieng Viet','Nguyen Son Hai','Nxb.DHQG TP.HCM',450,2024,60000,46,'001');
+INSERT INTO `sach` VALUES ('001','Giải tích 1','tiếng Việt','Nguyễn Hùng Cường','Nxb.DHQG TP.HCM',200,2021,75000,30,'001'),('002','Giải tích 2','tiếng Việt','Lê Bảo Điền','Nxb.DHQG TP.HCM',250,2021,80000,36,'001'),('003','Đại số tuyến tính','tiếng Việt','Nguyễn Chi Anh','Nxb.DHQG TP.HCM',250,2022,65000,50,'001'),('004','Hệ cơ sở dữ liệu','tiếng Việt','Lê Đình Tú','Nxb.DHQG TP.HCM',700,2025,175000,10,'001'),('005','Discrete mathematic','tiếng Anh','Kenneth H. Rosen','Mc  Graw Hill Education',2500,2019,300000,5,'001'),('006','Hệ thống số','tiếng Việt','Đoàn Minh Thắng','Nxb.DHQG TP.HCM',300,2020,65000,20,'001'),('007','Cấu trúc dữ liệu và giải thuật','tiếng Việt','Nguyễn Tuấn Anh','Nxb.DHQG TP.HCM',600,2021,70000,20,'001'),('008','Lịch sử Đảng','tiếng Việt','Phan Mạnh Tuấn','Nxb Chính Trị Quốc Gia Sự Thật',1000,2021,50000,30,'002'),('009','Chủ nghĩa xã hội khoa học','tiếng Việt','Nguyễn Thị Định','Nxb Chính Trị Quốc Gia Sự Thật',1112,2021,50000,27,'002'),('010','Tư tưởng Hồ Chí Minh','tiếng Việt','Lê Trọng Tiến','Nxb Chính Trị Quốc Gia Sự Thật',1500,2021,55000,35,'001'),('011','Giáo dục quốc phòng và an ninh','tiếng Việt','Nguyễn Tuấn Quang','Nxb Chính Trị Quốc Gia Sự Thật',350,2019,50000,25,'002'),('012','Hóa đại cương','tiếng Việt','Nguyễn Thi Thủy','Nxb.DHQG TP.HCM',150,2022,65000,25,'001'),('013','Vật lý 1','tiếng Việt','Trần Hải Đăng','Nxb.DHQG TP.HCM',250,2022,62000,20,'002'),('014','Mathematical Logic for Computer Science','tiếng Anh','M. Ben-Ari','Department of Science Teaching',360,2012,325000,15,'005'),('015','A First Course in Mathematical Modeling','tiếng Anh','Frank R. Giordano William P. Fox','Brooks/Cole, Cengage Learning',800,2013,500000,12,'004'),('016','Tâm lý học đại cương','tiếng Việt','Lê Thị Hồng','Nxb.DHQG TP HN',400,2020,45000,34,'005'),('017','Cơ nhiệt học đại cương','tiếng Việt','Nguyễn Sinh Huy','Nxb.DHQG TP HN',350,2022,45000,42,'005'),('018','Kinh tế vĩ mô','tiếng Việt','Nguyễn Thu Thủy','Nxb.DHQG TP HN',300,2023,50000,51,'005'),('019','Tim mạch học','tiếng Việt','Trường Sơn Kim','Nxb.Y Hoc',500,2024,67000,52,'004'),('020','Sức bền vật liệu','tiếng Việt','Nguyễn Sơn Hải','Nxb.DHQG TP.HCM',450,2024,60000,46,'002');
 /*!40000 ALTER TABLE `sach` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1031,8 +1029,8 @@ DROP TABLE IF EXISTS `tacgia`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `tacgia` (
   `MaTacGia` char(3) NOT NULL,
-  `ButDanh` varchar(45) DEFAULT NULL,
-  `QueQuan` varchar(45) DEFAULT NULL,
+  `ButDanh` varchar(255) DEFAULT NULL,
+  `QueQuan` varchar(255) DEFAULT NULL,
   `NamSinh` date DEFAULT NULL,
   `SoLuongSach` int DEFAULT '0',
   PRIMARY KEY (`MaTacGia`)
@@ -1058,8 +1056,8 @@ DROP TABLE IF EXISTS `theloai`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `theloai` (
   `MaTheLoai` char(3) NOT NULL,
-  `TenPhanLoai` varchar(45) DEFAULT NULL,
-  `ThongtinMoTa` varchar(45) DEFAULT NULL,
+  `TenPhanLoai` varchar(255) DEFAULT NULL,
+  `ThongTinMoTa` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`MaTheLoai`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -1070,7 +1068,7 @@ CREATE TABLE `theloai` (
 
 LOCK TABLES `theloai` WRITE;
 /*!40000 ALTER TABLE `theloai` DISABLE KEYS */;
-INSERT INTO `theloai` VALUES ('001','Khoa hoc May tinh','Mon co so, chuyen nganh cho KHMT'),('002','Chinh tri','Tai lieu, giao trinh cac mon chinh tri'),('003','Dai cuong','Mon hoc dai cuong'),('004','Ki Thuat May Tinh','Mon co so, chuyen nganh cho KTMT'),('005','GDQP','Tai lieu danh cho chuong trinh GDQP'),('006','Xay Dung','Tai lieu danh cho khoa xay dung'),('007','Kinh Te','Tai Lieu cho khoa kinh te'),('008','Co Khi','Tai lieu kho co khi'),('009','Y Duoc','Tai lieu chuyen nganh y duoc'),('010','Tam Ly','Tai lieu chuyen nganh tam ly hoc');
+INSERT INTO `theloai` VALUES ('001','Khoa học máy tính','Tài liệu cơ sở, chuyên ngành cho khoa KHMT'),('002','Chính trị','Tài liệu, giáo trình giáo dục chính trị'),('003','Đại cương','Giáo trình môn học đại cương'),('004','Kỹ thuật máy tính','Tài liệu cơ sở, chuyên ngành cho khoa KTMT'),('005','GDQP','Tài liệu dành cho chương trình GDQP'),('006','Xây dựng','Tài liệu cơ sở, chuyên ngành cho khoa xây dựng'),('007','Kinh tế','Tài liệu cơ sở, chuyên ngành cho khoa kinh tế'),('008','Cơ khí','Tài liệu cơ sở, chuyên ngành cho khoa cơ khí'),('009','Y dược','Tài liệu cơ sở, chuyên ngành cho khoa y dược'),('010','Tâm lý','Tài liệu cơ sở, chuyên ngành cho khoa tâm lý học');
 /*!40000 ALTER TABLE `theloai` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2360,4 +2358,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-11-30 23:37:00
+-- Dump completed on 2025-12-01 22:57:47
